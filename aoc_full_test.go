@@ -40,7 +40,40 @@ func TestAdventOfCode(t *testing.T) {
 				{
 					comment:  "actual puzzle input",
 					filename: "full.txt",
-					expected: "?",
+					expected: "193697",
+				},
+			},
+		},
+	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 2: Rock Paper Scissors ---",
+		url:         "https://adventofcode.com/2022/day/2",
+		examplesDir: "inputs/day02",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: CalculateScoreWithGuessedStrategy,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "15",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "15337",
+				},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: CalculateScoreWithCorrectStrategy,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "12",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "11696",
 				},
 			},
 		},
