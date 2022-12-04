@@ -111,4 +111,37 @@ func TestAdventOfCode(t *testing.T) {
 			},
 		},
 	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 4: Camp Cleanup ---",
+		url:         "https://adventofcode.com/2022/day/4",
+		examplesDir: "inputs/day04",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: CountPairsWhereOneRangeFullyContainsTheOther,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "2",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "651",
+				},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: CountPairsWhereOneRangeOverlapsTheOther,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "4",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "956",
+				},
+			},
+		},
+	})
 }
