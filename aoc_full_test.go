@@ -78,4 +78,37 @@ func TestAdventOfCode(t *testing.T) {
 			},
 		},
 	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 3: Rucksack Reorganization ---",
+		url:         "https://adventofcode.com/2022/day/3",
+		examplesDir: "inputs/day03",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: CalculateSumOfPrioritiesOfItemsInBothRucksackCompartments,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "157",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "7597",
+				},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: CalculateSumOfPrioritiesOfCommonItemsPerElfGroup,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "70",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "2607",
+				},
+			},
+		},
+	})
 }
