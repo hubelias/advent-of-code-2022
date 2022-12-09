@@ -179,6 +179,39 @@ func TestAdventOfCode(t *testing.T) {
 			},
 		},
 	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 6: Tuning Trouble ---",
+		url:         "https://adventofcode.com/2022/day/6",
+		examplesDir: "inputs/day06",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: FindNumberOfCharactersUntilEndOfFirstStartOfPacketMarker,
+			examples: []Example{
+				{filename: "ex1.txt", expected: "5"},
+				{filename: "ex2.txt", expected: "6"},
+				{filename: "ex3.txt", expected: "10"},
+				{filename: "ex4.txt", expected: "11"},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "1142",
+				},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: FindNumberOfCharactersUntilEndOfFirstStartOfMessageMarker,
+			examples: []Example{
+				{filename: "ex1.txt", expected: "23"},
+				{filename: "ex2.txt", expected: "23"},
+				{filename: "ex3.txt", expected: "29"},
+				{filename: "ex4.txt", expected: "26"},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "?",
+				},
+			},
+		},
+	})
 }
 
 var TODO PuzzleSolver = func(input *os.File) (string, error) {
