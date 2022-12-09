@@ -1,6 +1,8 @@
 package main
 
 import (
+	"errors"
+	"os"
 	"testing"
 )
 
@@ -144,4 +146,41 @@ func TestAdventOfCode(t *testing.T) {
 			},
 		},
 	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 5: Supply Stacks ---",
+		url:         "https://adventofcode.com/2022/day/5",
+		examplesDir: "inputs/day05",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: MoveCratesWithCrateMover9000,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "CMZ",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "RFFFWBPNS",
+				},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: MoveCratesWithCrateMover9001,
+			examples: []Example{
+				{
+					filename: "default.txt",
+					expected: "MCD",
+				},
+				{
+					comment:  "actual puzzle input",
+					filename: "full.txt",
+					expected: "CQQBBJFCS",
+				},
+			},
+		},
+	})
+}
+
+var TODO PuzzleSolver = func(input *os.File) (string, error) {
+	return "", errors.New("not implemented")
 }
