@@ -207,8 +207,27 @@ func TestAdventOfCode(t *testing.T) {
 				{
 					comment:  "actual puzzle input",
 					filename: "full.txt",
-					expected: "?",
+					expected: "2803",
 				},
+			},
+		},
+	})
+	testAoCDay(t, AdventOfCodeDay{
+		title:       "--- Day 7: No Space Left On Device ---",
+		url:         "https://adventofcode.com/2022/day/7",
+		examplesDir: "inputs/day07",
+		partOne: AdventOfCodePuzzlePart{
+			testFunc: SumSizeOfAllDirsWithTotalSizeAtMost100000,
+			examples: []Example{
+				{filename: "default.txt", expected: "95437"},
+				{filename: "full.txt", expected: "2031851"},
+			},
+		},
+		partTwo: AdventOfCodePuzzlePart{
+			testFunc: FreeUpSpaceForUpdate,
+			examples: []Example{
+				{filename: "default.txt", expected: "24933642"},
+				{filename: "full.txt", expected: "2568781"},
 			},
 		},
 	})
